@@ -13,10 +13,17 @@ api = tweepy.API(auth)
 documento = open('/home/jackson/Documentos/Sbc/datos.txt', 'a')
 
 dato= api.user_timeline(screen_name='LaVanguardia', count=5, incude_rts=False)
+# print dato
+print "================="
 for d in dato:
   print ("tweet: "+ d.text)
   print ('Retweet: '+ str(d.retweet_count))
   print('Favoritos: '+ str(d.favorite_count))
+  print('Fecha: '+str( d.created_at))
+  print ("descrpition: "+d.user.description)
+  print ("Lacacion: "+ d.user.location)
+  print ("Url usuario: "+ d.user.url)
+
 
 
 #print dato
